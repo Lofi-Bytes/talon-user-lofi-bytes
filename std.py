@@ -180,10 +180,10 @@ keymap.update({
     'backslash': '\\',
 
     '(dot dot | dotdot)': '..',
-    'cd': 'cd ',
-    'cd talon home': 'cd {}'.format(TALON_HOME),
-    'cd talon user': 'cd {}'.format(TALON_USER),
-    'cd talon plugins': 'cd {}'.format(TALON_PLUGINS),
+    # 'cd': 'cd ',
+    '(cd talon home | direct talon home)': ['cd {}'.format(TALON_HOME), Key('enter')],
+    '(cd talon user | direct talon user)': ['cd {}'.format(TALON_USER), Key('enter')],
+    '(cd talon plugins | direct talon plugins)': ['cd {}'.format(TALON_PLUGINS), Key('enter')],
 
     'run make (durr | dear)': 'mkdir ',
     'run get': 'git ',
@@ -331,7 +331,8 @@ keymap.update({
     'last window': Key('cmd-shift-`'),
     'next app': Key('cmd-tab'),
     'last app': Key('cmd-shift-tab'),
-    'next tab': Key('ctrl-tab'),
+    '(next tab | goneck)': Key('ctrl-tab'),
+    '(previous tab | goprev)': Key('ctrl-shift-tab'),
     'new tab': Key('cmd-t'),
     'last tab': Key('ctrl-shift-tab'),
 
