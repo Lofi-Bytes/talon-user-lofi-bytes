@@ -13,8 +13,8 @@ keymap = {
     'new window': Key('cmd-n'),
     '(next window | gibby)': Key('cmd-`'),
     '(last window | shibby)': Key('cmd-shift-`'),
-    'next space': Key('cmd-alt-ctrl-right'),
-    'last space': Key('cmd-alt-ctrl-left'),
+    # 'next space': Key('cmd-alt-ctrl-right'),
+    # 'last space': Key('cmd-alt-ctrl-left'),
 
     # Following three commands should be application specific
     #'(baxley | go back)': Key('cmd-alt-left'),
@@ -25,8 +25,9 @@ keymap = {
     '(snipline | delete line)': Key('cmd-right cmd-backspace'),
     'steffi': Key('alt-ctrl-backspace'),
     'stippy': Key('alt-ctrl-delete'),
-    'carmex': Key('alt-backspace'),
+    '(carmex | trough)': Key('alt-backspace'),
     'kite': Key('alt-delete'),
+    # 'trough': Key('option-backspace'),
     'snipple': Key('cmd-shift-left delete'),
     'snipper': Key('cmd-shift-right delete'),
     'slurp': Key('backspace delete'),
@@ -54,6 +55,7 @@ keymap = {
     '(jeepway | scroll way up)': Key('cmd-up'),
 
     # selecting
+    '(select all | olly)': Key('cmd-a'),
     'shreepway': Key('cmd-shift-up'),
     'shroomway': Key('cmd-shift-down'),
     'shreep': Key('shift-up'),

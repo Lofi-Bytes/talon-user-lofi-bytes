@@ -4,7 +4,9 @@ from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 import string
 
 
-alpha_alt = 'air bat cap die each fail gone harm sit jury crash look mad near odd pit quest red sun trap urge vest whale box yes zip'.split()
+alpha_alt = 'arch brov char dell etch fomp goof hark ice jinks koop look mowsh nerb ork pooch quash rosh souk teek unks verge whomp xerox yang zooch'.split()
+
+# alpha_alt = 'air bat cap die each fail gone harm sit jury crash look mad near odd pit quest red sun trap urge vest whale box yes zip'.split()
 alnum = list(zip(alpha_alt, string.ascii_lowercase)) + [(str(i), str(i)) for i in range(0, 10)]
 
 alpha = {}
@@ -32,7 +34,7 @@ alpha.update({'command control %s' % k: Key('cmd-ctrl-%s' % v) for k, v in alnum
 alpha.update({'command option %s' % k: Key('cmd-alt-%s' % v) for k, v in alnum})
 alpha.update({'option %s' % k: Key('alt-%s' % v) for k, v in alnum})
 alpha.update({'option shift %s' % k: Key('alt-shift-%s' % v) for k, v in alnum})
-
+8
 mapping = {
     'semicolon': ';',
     'new-line': '\n',
@@ -90,14 +92,23 @@ formatters = {
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
     'smash':  (True,  lambda i, word, _: word),
+    'squash':  (False,  lambda i, word, _: word),
     # spinal or kebab?
-    'kebab':  (True,  lambda i, word, _: word if i == 0 else '-'+word),
+    'spine':  (True,  lambda i, word, _: word if i == 0 else '-'+word),
     'title':  (False, lambda i, word, _: word.capitalize()),
-    'allcaps': (False, lambda i, word, _: word.upper()),
     'dubstring': (False, surround('"')),
     'string': (False, surround("'")),
     'padded': (False, surround(" ")),
-    'rot thirteen':  (False, rot13),
+    'rockthirteen':  (False, rot13),
+    'pathway':  (True, lambda i, word, _: word if i == 0 else '/'+word),
+    'dotsway':  (True, lambda i, word, _: word if i == 0 else '.'+word),
+    'yellsnik':  (True, lambda i, word, _: word.upper() if i == 0 else '_'+word.upper()),
+    # 'criffsnik':  (True, lambda i, word, _: word.capitalize() if i == 0 else '_'+word.capitalize()),
+    'champ': (True, lambda i, word, _: word.capitalize() if i == 0 else " "+word),
+    'criff': (True, lambda i, word, _: word.capitalize()),
+    'yeller': (False, lambda i, word, _: word.upper()),
+    'thrack': (True, lambda i, word, _: word[0:3]),
+    'quattro': (True, lambda i, word, _: word[0:4]),
 }
 
 def FormatText(m):
@@ -145,16 +156,15 @@ keymap.update({
     'down':  Key('down'),
 
     '(delete | junk)': Key('backspace'),
-    'trough': Key('option-backspace'),
 
     'slap': [Key('cmd-right enter')],
     '(enter | shock)': Key('enter'),
-    'escape': Key('esc'),
-    'question [mark]': '?',
+    '(escape | randall)': Key('esc'),
+    '(question [mark] | questo)': '?',
     'tilde': '~',
     '(bang | exclamation point)': '!',
-    'dollar [sign]': '$',
-    'downscore': '_',
+    '(dollar [sign] | dolly)': '$',
+    '(downscore | crunder)': '_',
     '(semi | semicolon)': ';',
     'colon': ':',
     '(square | left square [bracket])': '[', '(rsquare | are square | right square [bracket])': ']',
@@ -186,28 +196,28 @@ keymap.update({
     '(cd talon plugins | direct talon plugins)': ['cd {}'.format(TALON_PLUGINS), Key('enter')],
 
     'run make (durr | dear)': 'mkdir ',
-    'run get': 'git ',
-    'run get (R M | remove)': 'git rm ',
-    'run get add': 'git add ',
-    'run get bisect': 'git bisect ',
-    'run get branch': 'git branch ',
-    'run get checkout': 'git checkout ',
-    'run get clone': 'git clone ',
-    'run get commit': ['git commit -a -m ""', Key('left')],
-    'run get diff': 'git diff ',
-    'run get fetch': 'git fetch ',
-    'run get grep': 'git grep ',
-    'run get in it': 'git init ',
-    'run get log': 'git log ',
-    'run get merge': 'git merge ',
-    'run get move': 'git mv ',
-    'run get pull': 'git pull ',
-    'run get push': 'git push ',
-    'run get rebase': 'git rebase ',
-    'run get reset': 'git reset ',
-    'run get show': 'git show ',
-    'run get status': 'git status ',
-    'run get tag': 'git tag ',
+    # 'run get': 'git ',
+    # 'run get (R M | remove)': 'git rm ',
+    # 'run get add': 'git add ',
+    # 'run get bisect': 'git bisect ',
+    # 'run get branch': 'git branch ',
+    # 'run get checkout': 'git checkout ',
+    # 'run get clone': 'git clone ',
+    # 'run get commit': ['git commit -a -m ""', Key('left')],
+    # 'run get diff': 'git diff ',
+    # 'run get fetch': 'git fetch ',
+    # 'run get grep': 'git grep ',
+    # 'run get in it': 'git init ',
+    # 'run get log': 'git log ',
+    # 'run get merge': 'git merge ',
+    # 'run get move': 'git mv ',
+    # 'run get pull': 'git pull ',
+    # 'run get push': 'git push ',
+    # 'run get rebase': 'git rebase ',
+    # 'run get reset': 'git reset ',
+    # 'run get show': 'git show ',
+    # 'run get status': 'git status ',
+    # 'run get tag': 'git tag ',
     'run (them | vim)': 'vim ',
     'run L S': 'ls\n',
     'dot pie': '.py',
@@ -336,8 +346,10 @@ keymap.update({
     'new tab': Key('cmd-t'),
     'last tab': Key('ctrl-shift-tab'),
 
-    'next space': Key('cmd-alt-ctrl-right'),
-    'last space': Key('cmd-alt-ctrl-left'),
+    # 'next space': Key('cmd-alt-ctrl-right'),
+    # 'last space': Key('cmd-alt-ctrl-left'),
+
+    'quit app': Key('cmd-q'),
 
     'scroll down': [Key('down')] * 30,
     'scroll up': [Key('up')] * 30,

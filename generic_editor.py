@@ -95,7 +95,7 @@ def find_previous(m):
 keymap = {
     'sprinkle' + optional_numerals: jump_to_bol,
     'spring' + optional_numerals: jump_to_eol_and(jump_to_beginning_of_text),
-    'dear' + optional_numerals: jump_to_eol_and(lambda: None),
+    'sprinkler' + optional_numerals: jump_to_eol_and(lambda: None),
     'smear' + optional_numerals: jump_to_eol_and(jump_to_nearly_end_of_line),
     'trundle' + optional_numerals: jump_to_bol_and(toggle_comments),
     'jolt': [
@@ -129,7 +129,7 @@ keymap = {
     'shockey': Key('ctrl-a cmd-left enter up'),
     'shockoon': Key('cmd-right enter'),
     'sprinkoon' + numerals: jump_to_eol_and(lambda: press('enter')),
-    'olly': Key('cmd-a'),
+    '(select all | olly)': Key('cmd-a'),
 }
 
 ctx.keymap(keymap)

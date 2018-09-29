@@ -6,21 +6,21 @@ ctx = Context('spectacle')
 
 
 keymap = {
-    'windy center': Key('cmd-alt-f'),
+    'windy center': Key('cmd-alt-c'),
     'windy max': Key('cmd-alt-f'),
 
     'windy left': Key('cmd-alt-left'),
     'windy right': Key('cmd-alt-right'),
-    'windy top': Key('cmd-alt-top'),
-    'windy bottom': Key('cmd-alt-bottom'),
+    'windy top': Key('cmd-alt-up'),
+    'windy bottom': Key('cmd-alt-down'),
 
     'windy upper left': Key('cmd-ctrl-left'),
     'windy lower left': Key('cmd-ctrl-shift-left'),
     'windy upper right': Key('cmd-ctrl-right'),
     'windy lower right': Key('cmd-ctrl-shift-right'),
 
-    'windy next display': Key('cmd-ctrl-alt-right'),
-    'windy previous display': Key('cmd-ctrl-alt-left'),
+    # 'windy next display': Key('cmd-ctrl-alt-right'),
+    # 'windy previous display': Key('cmd-ctrl-alt-left'),
 
     'windy next third': Key('ctrl-alt-right'),
     'windy previous third': Key('ctrl-alt-left'),

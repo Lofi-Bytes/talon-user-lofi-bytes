@@ -47,3 +47,41 @@ def parse_words_as_integer(words):
 
     # Create merged number string and convert to int
     return int(''.join(normalized_number_values))
+
+
+numeral_map = dict((str(n), n) for n in range(0, 20))
+for n in range(20, 101, 10):
+    numeral_map[str(n)] = n
+for n in range(100, 1001, 100):
+    numeral_map[str(n)] = n
+for n in range(1000, 10001, 1000):
+    numeral_map[str(n)] = n
+numeral_map["oh"] = 0  # synonym for zero
+numeral_map["and"] = None  # drop me
+
+numerals = " (" + " | ".join(sorted(numeral_map.keys())) + ")+"
+optional_numerals = " (" + " | ".join(sorted(numeral_map.keys())) + ")*"
+
+
+def text_to_number(words):
+    tmp = [str(s).lower() for s in words]
+    words = [parse_word(word) for word in tmp]
+
+    result = 0
+    factor = 1
+    for word in reversed(words):
+        print("{} {} {}".format(result, factor, word))
+        if word not in numerals:
+            raise Exception("not a number: {}".format(words))
+
+        number = numeral_map[word]
+        if number is None:
+            continue
+
+        number = int(number)
+        if number > 10:
+            result = result + number
+        else:
+            result = result + factor * number
+        factor = (10 ** len(str(number))) * factor
+    return result

@@ -41,8 +41,9 @@ keymap = {
     'shell copy curse [<dgndictation>]': ['cp -r', text],
     'shell exit': [Key('ctrl-c'), 'exit\n'],
     'shell kill': Key('ctrl-c'),
-    'shell list [<dgndictation>]': ['ls ', text],
-    'shell list all [<dgndictation>]': ['ls -la ', text],
+    # 'shell list [<dgndictation>]': ['ls ', text],
+    # 'shell list all [<dgndictation>]': ['ls -la ', text],
+    'shell list [<dgndictation>]': ['ls -la ', Key('return')],
     'shell make (durr | dear) [<dgndictation>]': ['mkdir ', text],
     'shell mipple [<dgndictation>]': ['mkdir -p ', text],
     'shell move [<dgndictation>]': ['mv ', text],
@@ -85,6 +86,10 @@ keymap = {
     'gripper': ['grep -r  .', Key('left left')],
     'pee socks': 'ps aux ',
     'vi': 'vi ',
+
+    'print environment': ['printenv', Key('return')],
+    'finger [<dgndictation>]': ['touch ', text],
+    'code [<dgndictation>]': ['code ', text],
 }
 
 ctx.keymap(keymap)
