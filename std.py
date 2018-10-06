@@ -4,7 +4,7 @@ from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 import string
 
 
-alpha_alt = 'arch brov char dell etch fomp goof hark ice jinks koop look mowsh nerb ork pooch quash rosh souk teek unks verge whomp xerox yang zooch'.split()
+alpha_alt = 'arch brov char dell etch fomp goof hark ice jinks koop look mowsh nerb ork pooch quash rosh souk teek unks verge whomp xylophone yang zooch'.split()
 
 # alpha_alt = 'air bat cap die each fail gone harm sit jury crash look mad near odd pit quest red sun trap urge vest whale box yes zip'.split()
 alnum = list(zip(alpha_alt, string.ascii_lowercase)) + [(str(i), str(i)) for i in range(0, 10)]
@@ -90,6 +90,7 @@ def rot13(i, word, _):
 formatters = {
     'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
+    'criffed': (True,  lambda i, word, _: word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
     'smash':  (True,  lambda i, word, _: word),
     'squash':  (False,  lambda i, word, _: word),
@@ -194,6 +195,10 @@ keymap.update({
     '(cd talon home | direct talon home)': ['cd {}'.format(TALON_HOME), Key('enter')],
     '(cd talon user | direct talon user)': ['cd {}'.format(TALON_USER), Key('enter')],
     '(cd talon plugins | direct talon plugins)': ['cd {}'.format(TALON_PLUGINS), Key('enter')],
+
+    'shall': 'shell',
+    'npm': 'npm',
+    'npm start': 'npm start',
 
     'run make (durr | dear)': 'mkdir ',
     # 'run get': 'git ',
@@ -341,8 +346,8 @@ keymap.update({
     'last window': Key('cmd-shift-`'),
     'next app': Key('cmd-tab'),
     'last app': Key('cmd-shift-tab'),
-    '(next tab | goneck)': Key('ctrl-tab'),
-    '(previous tab | goprev)': Key('ctrl-shift-tab'),
+    'next tab': Key('ctrl-tab'),
+    'previous tab': Key('ctrl-shift-tab'),
     'new tab': Key('cmd-t'),
     'last tab': Key('ctrl-shift-tab'),
 

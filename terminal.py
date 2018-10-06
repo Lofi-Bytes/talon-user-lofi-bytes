@@ -90,6 +90,9 @@ keymap = {
     'print environment': ['printenv', Key('return')],
     'finger [<dgndictation>]': ['touch ', text],
     'code [<dgndictation>]': ['code ', text],
+    'pip environment [<dgndictation>]': ['pipenv ', text],
+    'pip [<dgndictation>]': ['pip ', text],
+    'open [<dgndictation>]': ['open', text],
 }
 
 ctx.keymap(keymap)

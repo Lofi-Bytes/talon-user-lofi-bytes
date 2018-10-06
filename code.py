@@ -30,7 +30,7 @@ keymap = {
     '(ranqual | nockle)': ' !== ',
     '(call | prekris)': '()',
 
-    '(index | brax)': ['[]', Key('left')],
+    'brax': ['[]', Key('left')],
     '(empty dict | kirk)': ['{}', Key('left')],
 
     '(empty array | brackers)': '[]',

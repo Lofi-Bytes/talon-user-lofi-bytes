@@ -62,4 +62,24 @@ context.keymap({
     '(cut | snatch)': Key('cmd-x'),
     '(copy | stoosh)': Key('cmd-c'),
     '(paste | spark)': Key('cmd-v'),
+
+    # Comments
+    'chom slash': Key('cmd-/'),
+
+    # Navigating VSCode
+    'goneck': Key('cmd-alt-right'),
+    'goprev': Key('cmd-alt-left'),
 })
+
+# def overload(spec):
+#   def wrapper(m):
+#     bundle = ui.active_app().bundle
+#     action = spec.get(bundle, spec.get(None))
+#     if action:
+#       action(m)
+#   return wrapper
+
+# 'junk': overload({
+#   None: Key('backspace'),
+#   'com.apple.Finder': Key('cmd-backspace'),
+# }),
