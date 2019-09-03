@@ -30,7 +30,7 @@ keymap = {
     'cd': ['cd ; ll', Key('left'), Key('left'), Key('left'), Key('left')],
     '(ls | run ellis | run alice)': 'ls\n',
     '(la | run la)': 'ls -la\n',
-    'durrup': 'cd ..; ls\n',
+    'durrup': 'cd ..; ls -la\n',
     'go back': 'cd -\n',
     'direct desktop': ['cd ~/Desktop; ll', Key('enter')],
     'direct projects': ['cd ~/Desktop/projects; ll', Key('enter')],

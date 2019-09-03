@@ -199,6 +199,12 @@ keymap.update({
     'shall': 'shell',
     'npm': 'npm',
     'npm start': 'npm start',
+    'npm install': 'npm install',
+
+    'jango': 'django',
+    'adjango': 'django',
+    'doctor': 'docker',
+    'docker compose': 'docker-compose',
 
     'run make (durr | dear)': 'mkdir ',
     # 'run get': 'git ',
@@ -229,6 +235,9 @@ keymap.update({
     'run make': 'make\n',
     'run jobs': 'jobs\n',
 
+    'python': 'python3 ',
+    'python3': 'python3 ',
+
     'const': 'const ',
     'static': 'static ',
     'tip pent': 'int ',
@@ -245,6 +254,8 @@ keymap.update({
     'tip size': 'size_t',
     'tip float': 'float ',
     'tip double': 'double ',
+
+    'prank': ['  ', Key('left')],
 
     'args': ['()', Key('left')],
     'index': ['[]', Key('left')],
@@ -354,7 +365,7 @@ keymap.update({
     # 'next space': Key('cmd-alt-ctrl-right'),
     # 'last space': Key('cmd-alt-ctrl-left'),
 
-    'quit app': Key('cmd-q'),
+    '(quit app | chom quash)': Key('cmd-q'),
 
     'scroll down': [Key('down')] * 30,
     'scroll up': [Key('up')] * 30,
