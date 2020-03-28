@@ -1,5 +1,5 @@
 from talon.voice import Context, Rep, talon
-from user.utils import parse_words_as_integer
+from .utils import parse_words_as_integer
 
 ctx = Context('repeater')
 

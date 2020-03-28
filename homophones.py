@@ -7,7 +7,7 @@ from talon.voice import Word, Key, Context, Str, press
 from talon import canvas
 from talon.skia import Rect
 
-from user.std import parse_word
+from .std import parse_word
 
 ########################################################################
 # global settings
@@ -17,7 +17,7 @@ from user.std import parse_word
 # e.g. where,wear,ware
 # a suitable one can be found here:
 # https://github.com/pimentel/homophones
-homophones_file = './user/homophones.csv'
+homophones_file = './user/jsnickerson/homophones.csv'
 # if quick_replace, then when a word is selected and only one homophone exists,
 # replace it without bringing up the options
 quick_replace = True

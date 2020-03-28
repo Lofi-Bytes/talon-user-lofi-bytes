@@ -1,5 +1,5 @@
 from talon.voice import Context, Key, press, Str
-from user.utils import parse_words_as_integer
+from .utils import parse_words_as_integer
 
 context = Context('VSCode', bundle='com.microsoft.VSCode')
 
